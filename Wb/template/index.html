@@ -1,21 +1,18 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
 
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'style/style.css' %}">
-    <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+{% block title %}
+Login
+{% endblock %}
 
-    <style>
-   
-    </style>
-</head>
-<body>
+{% block head %}
+<!-- Bootstrap 5 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'style/style.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
 
 <div class="login-card">
     <div class="icon-box">
@@ -25,13 +22,11 @@
     <h3 class="text-center mb-3">Welcome Back</h3>
     <p class="text-center text-muted mb-4">Login to your account</p>
 
-    <!-- Doctor / Patient -->
     <div class="text-center mb-4 role-btn">
-    <a href="/doctorsignup.html"><button class="btn btn-outline-primary me-2">Doctor</button></a>
-    <a href="/patientsignup.html"><button class="btn btn-outline-success">Patient</button></a>
+        <a href="/doctorsignup.html" class="btn btn-outline-primary me-2">Doctor</a>
+        <a href="/patientlogin.html" class="btn btn-outline-success">Patient</a>
     </div>
 
-    <!-- Login Form -->
     <form>
         <div class="mb-3">
             <label class="form-label">Email</label>
@@ -49,8 +44,7 @@
                 <label class="form-check-label">Remember me</label>
             </div>
             <a href="#" class="text-decoration-none">Forgot Password?</a>
-           
-            <a href="/doctorsignup.html" class="text-decoration-none">Sign/up</a>
+            <a href="/doctorsignup.html" class="text-decoration-none">Sign up</a>
         </div>
 
         <div class="d-grid">
@@ -59,5 +53,4 @@
     </form>
 </div>
 
-</body>
-</html>
+{% endblock %}
