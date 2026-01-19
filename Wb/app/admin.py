@@ -1,7 +1,13 @@
 from django.contrib import admin
-from app.models import doctorsignup , patientsignup
+from .models import doctorsignup, patientsignup
 
+class DoctorAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'license_number', 'department', 'user')
+    search_fields = ('full_name', 'email', 'license_number', 'department')
 
-admin.site.register(doctorsignup)
+class PatientAdmin(admin.ModelAdmin):
+    list_display = ('Name', 'email', 'user')
+    search_fields = ('Name', 'email')
 
-# Register your models here.
+admin.site.register(doctorsignup, DoctorAdmin)
+admin.site.register(patientsignup, PatientAdmin)

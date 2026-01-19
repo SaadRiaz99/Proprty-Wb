@@ -1,0 +1,98 @@
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Patient Dashboard
+{% endblock %}
+
+{% block head %}
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="{% static 'style/styleweb3.css' %}">
+{% endblock head %}
+{% block body %}
+
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">Hospital Managment</div>
+    <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Appointments</a></li>
+        <li><a href="#">Doctors</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#" class="logout">Logout</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Welcome, Patient</h1>
+        <p>Book appointments & manage your health easily</p>
+        <button class="hero-btn">Book Appointment</button>
+    </div>
+</section>
+
+<section class="dashboard">
+
+
+    <div class="cards">
+        <div class="card">
+            <i class="bi bi-calendar-check"></i>
+            <h3>My Appointments</h3>
+            <p>View & manage</p>
+        </div>
+
+        <div class="card">
+            <i class="bi bi-person-badge"></i>
+            <h3>Doctors</h3>
+            <p>Find specialists</p>
+        </div>
+
+        <div class="card">
+            <i class="bi bi-heart-pulse"></i>
+            <h3>Health Records</h3>
+            <p>View reports</p>
+        </div>
+    </div>
+
+    
+    <div class="appointment-box">
+        <h2>Upcoming Appointments</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Doctor</th>
+                    <th>Department</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dr. Ahmed</td>
+                    <td>Cardiology</td>
+                    <td>25 Jan 2026</td>
+                    <td class="status pending">Pending</td>
+                </tr>
+                <tr>
+                    <td>Dr. Sarah</td>
+                    <td>Dermatology</td>
+                    <td>28 Jan 2026</td>
+                    <td class="status approved">Approved</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+</body>
+{% endblock body %}

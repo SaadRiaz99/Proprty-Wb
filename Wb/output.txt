@@ -1,8 +1,14 @@
-The `NameError` in `app/views.py` has been resolved, along with several other logical issues in the `patientsignup` view. The code should now correctly handle password comparisons, check for existing emails, save patient signup data, and redirect upon successful registration.
+I have made the necessary corrections to `app/models.py`:
+- Removed the `Confirm_password` field from both `doctorsignup` and `patientsignup` models, as it's typically used for form validation and not for database storage.
+- Changed the `password` field in the `patientsignup` model from `EmailField` to `CharField` and set its `max_length` to 128 for storing hashed passwords securely.
 
-You can try running your application again.
+To apply these changes to your database and resolve the `OperationalError`, please run the following Django management commands in your project's root directory (`D:\python\Wb\project`):
 
-As a reminder, I've also noted a pending improvement in your `app/models.py`:
-- **Change `password` and `Confirm_password` fields from `EmailField` to `CharField` in `app/models.py`.** This is important for security and data integrity, as passwords should not be stored as email fields.
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-Please let me know if you encounter any further issues or would like me to address the model field changes.
+After running these commands, the `OperationalError` should be resolved, and you should be able to access the admin interface for `doctorsignup` without issues.
+
+Please let me know if you encounter any further problems.
